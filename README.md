@@ -1,6 +1,3 @@
-Aquí tienes un `README.md` en inglés limpio y profesional para tu proyecto `my_cv`, enfocado en Flutter, arquitectura limpia y tu perfil personal:
-
-```markdown
 # my_cv
 
 A minimalist Flutter portfolio app showcasing clean architecture, dependency injection, and state management using `Provider`.
@@ -19,7 +16,7 @@ A minimalist Flutter portfolio app showcasing clean architecture, dependency inj
 
 ## 📁 Project Structure
 
-```
+
 
 lib/
 ├── common/               # Shared widgets/utilities
@@ -32,27 +29,27 @@ lib/
 │   └── ...
 └── main.dart
 
-````
+
 
 ## 🚀 Getting Started
 
 1. Clone the repo:
-   ```bash
+   bash
    git clone https://github.com/your_username/my_cv.git
    cd my_cv
-````
+
 
 2. Get dependencies:
 
-   ```bash
+   bash
    flutter pub get
-   ```
+
 
 3. Run the app:
 
-   ```bash
+   bash
    flutter run
-   ```
+
 
 ## 🛠️ Dependencies
 
