@@ -1,20 +1,69 @@
+Aquí tienes un `README.md` en inglés limpio y profesional para tu proyecto `my_cv`, enfocado en Flutter, arquitectura limpia y tu perfil personal:
+
+```markdown
 # my_cv
-<<<<<<< HEAD
-This is a small app where you can see how clean architecture works with dependency injection using provider and you can learn more about me.
-=======
 
-A new Flutter project.
+A minimalist Flutter portfolio app showcasing clean architecture, dependency injection, and state management using `Provider`.
 
-## Getting Started
+## ✨ Features
 
-This project is a starting point for a Flutter application.
+- 📱 Simple and elegant UI
+- 🧱 Clean architecture structure
+- 📦 Dependency injection module per feature
+- 📊 State management with `Provider` and `ValueNotifier`
+- 🌐 External API requests layer
+- 📄 CV overview, including:
+  - About Me
+  - Projects (linked to GitHub)
+  - Contact section with email integration
 
-A few resources to get you started if this is your first Flutter project:
+## 📁 Project Structure
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
->>>>>>> 1425a56 (primer commit)
+lib/
+├── common/               # Shared widgets/utilities
+├── home/                 # Main module
+│   ├── domain/           # Models and Provider
+│   ├── external/         # HTTP requests
+│   ├── interface/        # Screens and widgets
+│   └── home\_injection.dart
+├── welcome/              # Welcome module
+│   └── ...
+└── main.dart
+
+````
+
+## 🚀 Getting Started
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/your_username/my_cv.git
+   cd my_cv
+````
+
+2. Get dependencies:
+
+   ```bash
+   flutter pub get
+   ```
+
+3. Run the app:
+
+   ```bash
+   flutter run
+   ```
+
+## 🛠️ Dependencies
+
+* [provider](https://pub.dev/packages/provider)
+* [lottie](https://pub.dev/packages/lottie)
+* [url\_launcher](https://pub.dev/packages/url_launcher)
+
+## 📌 Contact
+
+Feel free to contact me via \davidtirado.dev@gmail.com or check my GitHub for more projects.
+
+---
+
+Made with 💙 in Flutter by **David Tirado**
