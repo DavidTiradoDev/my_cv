@@ -38,7 +38,8 @@ dependencies:
   get: ^4.7.2
   lottie: ^3.3.1
   google_fonts: ^6.2.1
-  url_launcher: ^6.3.1
+  lucide_icons_flutter: ^3.0.0
+  easy_url_launcher: ^0.0.7
 
 dev_dependencies:
   flutter_test:

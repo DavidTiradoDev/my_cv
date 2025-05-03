@@ -1,9 +1,11 @@
+import 'package:easy_url_launcher/easy_url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_cv/about_me/about_me_injection.dart';
 import 'package:my_cv/common/widgets/widgets.dart';
+import 'package:my_cv/conctacs/contacts_injection.dart';
 import 'package:my_cv/utils/colors.dart';
 import 'package:my_cv/utils/dimensions.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -70,12 +72,12 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Image.asset('assets/images/tech_background_1.png', width: size.width),
+          SizedBox(height: 10),
           Container(
             padding: EdgeInsets.symmetric(
               horizontal: AppDimensions.paddingM,
               vertical: AppDimensions.paddingS,
             ),
-
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -88,8 +90,8 @@ class HomeScreen extends StatelessWidget {
                       backgroundColor: AppColors.black,
                       textColor: AppColors.white,
                       onTap: () async {
-                        await launchUrl(
-                          Uri.parse('https://github.com/DavidTiradoDev'),
+                        EasyLauncher.url(
+                          url: 'https://github.com/DavidTiradoDev',
                         );
                       },
                       isBorderEnabled: false,
@@ -97,7 +99,11 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(width: 10),
                     MainButton(
                       title: 'Sobre mí',
-                      onTap: () {},
+                      onTap: () {
+                        Navigations.navigationToScreen(
+                          screen: AboutMeInjection.injection(),
+                        );
+                      },
                       backgroundColor: AppColors.white,
                       textColor: AppColors.black,
                       isBorderEnabled: true,
@@ -109,7 +115,11 @@ class HomeScreen extends StatelessWidget {
                   title: 'Contactos',
                   backgroundColor: AppColors.white,
                   textColor: AppColors.black,
-                  onTap: () {},
+                  onTap: () {
+                    Navigations.navigationToScreen(
+                      screen: ContactsInjection.injection(),
+                    );
+                  },
                   isBorderEnabled: true,
                 ),
               ],
