@@ -1,11 +1,14 @@
-import 'package:easy_url_launcher/easy_url_launcher.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_url_launcher/easy_url_launcher.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'package:my_cv/utils/dimensions.dart';
+import 'package:my_cv/utils/colors.dart';
+
 import 'package:my_cv/about_me/about_me_injection.dart';
 import 'package:my_cv/common/widgets/widgets.dart';
 import 'package:my_cv/conctacs/contacts_injection.dart';
-import 'package:my_cv/utils/colors.dart';
-import 'package:my_cv/utils/dimensions.dart';
+import 'package:my_cv/studies/studies_injection.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -87,14 +90,14 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     MainButton(
                       title: 'Proyectos',
-                      backgroundColor: AppColors.black,
-                      textColor: AppColors.white,
+                      backgroundColor: AppColors.white,
+                      textColor: AppColors.black,
                       onTap: () async {
                         EasyLauncher.url(
                           url: 'https://github.com/DavidTiradoDev',
                         );
                       },
-                      isBorderEnabled: false,
+                      isBorderEnabled: true,
                     ),
                     SizedBox(width: 10),
                     MainButton(
@@ -111,16 +114,33 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 10),
-                MainButton(
-                  title: 'Contactos',
-                  backgroundColor: AppColors.white,
-                  textColor: AppColors.black,
-                  onTap: () {
-                    Navigations.navigationToScreen(
-                      screen: ContactsInjection.injection(),
-                    );
-                  },
-                  isBorderEnabled: true,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MainButton(
+                      title: 'Contactos',
+                      backgroundColor: AppColors.black,
+                      textColor: AppColors.white,
+                      onTap: () {
+                        Navigations.navigationToScreen(
+                          screen: ContactsInjection.injection(),
+                        );
+                      },
+                      isBorderEnabled: true,
+                    ),
+                    SizedBox(width: 10),
+                    MainButton(
+                      title: 'Estudios',
+                      onTap: () {
+                        Navigations.navigationToScreen(
+                          screen: StudiesInjection.injection(),
+                        );
+                      },
+                      backgroundColor: AppColors.black,
+                      textColor: AppColors.white,
+                      isBorderEnabled: true,
+                    ),
+                  ],
                 ),
               ],
             ),
