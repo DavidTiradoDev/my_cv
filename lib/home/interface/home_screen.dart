@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_url_launcher/easy_url_launcher.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:my_cv/home/domain/home_provider.dart';
 
 import 'package:my_cv/utils/dimensions.dart';
 import 'package:my_cv/utils/colors.dart';
@@ -11,13 +12,17 @@ import 'package:my_cv/about_me/about_me_injection.dart';
 import 'package:my_cv/common/widgets/widgets.dart';
 import 'package:my_cv/conctacs/contacts_injection.dart';
 import 'package:my_cv/studies/studies_injection.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final homeProvider = Provider.of<HomeProvider>(context);
     final size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
@@ -26,7 +31,7 @@ class HomeScreen extends StatelessWidget {
           child: InkWell(
             borderRadius: BorderRadius.circular(30),
             child: Icon(LucideIcons.languages, color: AppColors.white),
-            onTap: () {
+            onTap: () async {
               showDialog(
                 context: context,
                 builder:
@@ -38,14 +43,20 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             title: const Text('Español'),
                             onTap: () {
-                              context.setLocale(const Locale('es'));
+                              homeProvider.changeLanguage(
+                                context,
+                                Locale('es'),
+                              );
                               Navigator.pop(context);
                             },
                           ),
                           ListTile(
                             title: const Text('English'),
                             onTap: () {
-                              context.setLocale(const Locale('en'));
+                              homeProvider.changeLanguage(
+                                context,
+                                Locale('en'),
+                              );
                               Navigator.pop(context);
                             },
                           ),
