@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:my_cv/common/navigator_key.dart';
 
 class Navigations {
   Navigations._();
@@ -8,7 +8,7 @@ class Navigations {
     required Widget screen,
     VoidCallback? onPop,
   }) {
-    Navigator.of(Get.context!)
+    navigatorKey.currentState!
         .push(
           PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) => screen,
@@ -37,12 +37,12 @@ class Navigations {
   }
 
   static void navigationToScreenOff({required Widget screen}) {
-    Navigator.of(Get.context!).pushReplacement(
+    navigatorKey.currentState!.pushReplacement(
       PageRouteBuilder(
         pageBuilder: (context, animation, secondaryAnimation) => screen,
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           var tween = Tween(
-            begin: const Offset(0, 0),
+            begin: Offset(0, 0),
             end: Offset.zero,
           ).chain(CurveTween(curve: Curves.easeInOut));
           return SlideTransition(
@@ -55,12 +55,12 @@ class Navigations {
   }
 
   static void navigationToScreenOffAll({required Widget screen}) {
-    Navigator.of(Get.context!).pushAndRemoveUntil(
+    navigatorKey.currentState!.pushAndRemoveUntil(
       PageRouteBuilder(
         pageBuilder: (context, animation, secondaryAnimation) => screen,
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           var tween = Tween(
-            begin: const Offset(0, 0),
+            begin: Offset(0, 0),
             end: Offset.zero,
           ).chain(CurveTween(curve: Curves.easeInOut));
           return SlideTransition(
@@ -69,7 +69,7 @@ class Navigations {
           );
         },
       ),
-      ModalRoute.withName('/'),
+      (route) => false,
     );
   }
 }

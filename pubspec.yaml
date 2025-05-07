@@ -40,6 +40,8 @@ dependencies:
   google_fonts: ^6.2.1
   lucide_icons_flutter: ^3.0.0
   easy_url_launcher: ^0.0.7
+  easy_localization: ^3.0.7+1
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +69,7 @@ flutter:
     - assets/
     - assets/animations/
     - assets/images/
+    - assets/lang/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

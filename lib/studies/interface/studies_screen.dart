@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:easy_url_launcher/easy_url_launcher.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_cv/utils/colors.dart';
 import 'package:my_cv/utils/dimensions.dart';
@@ -12,7 +14,7 @@ class StudiesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Estudios',
+          context.tr('studies'),
           style: GoogleFonts.manrope(
             fontWeight: FontWeight.bold,
             color: AppColors.white,
@@ -32,7 +34,7 @@ class StudiesScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                'Mis títulos',
+                context.tr('my_degrees'),
                 style: GoogleFonts.manrope(
                   fontWeight: FontWeight.bold,
                   fontSize: AppDimensions.fontLarge,
@@ -40,18 +42,18 @@ class StudiesScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'Bachiller académico',
+                context.tr('high_school'),
                 style: GoogleFonts.manrope(
                   fontWeight: FontWeight.bold,
                   fontSize: AppDimensions.fontNormal,
                 ),
               ),
               Text(
-                'Institución Educativa Avelino Saldarriaga',
+                context.tr('school_name'),
                 style: GoogleFonts.manrope(fontSize: AppDimensions.fontNormal),
               ),
               Text(
-                'Año - 2020',
+                context.tr('year_2020'),
                 style: GoogleFonts.manrope(
                   fontSize: AppDimensions.fontNormal,
                   fontWeight: FontWeight.w100,
@@ -59,7 +61,7 @@ class StudiesScreen extends StatelessWidget {
               ),
               Divider(),
               Text(
-                'Mis diplomados',
+                context.tr('my_diplomas'),
                 style: GoogleFonts.manrope(
                   fontWeight: FontWeight.bold,
                   fontSize: AppDimensions.fontLarge,
@@ -67,7 +69,7 @@ class StudiesScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'Programación básica',
+                context.tr('basic_programming'),
                 style: GoogleFonts.manrope(
                   fontWeight: FontWeight.bold,
                   fontSize: AppDimensions.fontNormal,
@@ -78,7 +80,7 @@ class StudiesScreen extends StatelessWidget {
                 style: GoogleFonts.manrope(fontSize: AppDimensions.fontNormal),
               ),
               Text(
-                'Año - 2023',
+                context.tr('year_2023'),
                 style: GoogleFonts.manrope(
                   fontSize: AppDimensions.fontNormal,
                   fontWeight: FontWeight.w100,
@@ -86,7 +88,7 @@ class StudiesScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'Análisis de datos con Python',
+                context.tr('data_analysis'),
                 style: GoogleFonts.manrope(
                   fontWeight: FontWeight.bold,
                   fontSize: AppDimensions.fontNormal,
@@ -97,7 +99,7 @@ class StudiesScreen extends StatelessWidget {
                 style: GoogleFonts.manrope(fontSize: AppDimensions.fontNormal),
               ),
               Text(
-                'Año - 2023',
+                context.tr('year_2023'),
                 style: GoogleFonts.manrope(
                   fontSize: AppDimensions.fontNormal,
                   fontWeight: FontWeight.w100,
@@ -105,18 +107,18 @@ class StudiesScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'Conceptos de la programación ',
+                context.tr('programming_concepts'),
                 style: GoogleFonts.manrope(
                   fontWeight: FontWeight.bold,
                   fontSize: AppDimensions.fontNormal,
                 ),
               ),
               Text(
-                'Platzi',
+                'Open Bootcamp',
                 style: GoogleFonts.manrope(fontSize: AppDimensions.fontNormal),
               ),
               Text(
-                'Año - 2023',
+                context.tr('year_2023'),
                 style: GoogleFonts.manrope(
                   fontSize: AppDimensions.fontNormal,
                   fontWeight: FontWeight.w100,
@@ -124,7 +126,7 @@ class StudiesScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'Flutter - Tu guía completa de desarrollo para IOS y Android',
+                context.tr('flutter_course'),
                 style: GoogleFonts.manrope(
                   fontWeight: FontWeight.bold,
                   fontSize: AppDimensions.fontNormal,
@@ -135,7 +137,7 @@ class StudiesScreen extends StatelessWidget {
                 style: GoogleFonts.manrope(fontSize: AppDimensions.fontNormal),
               ),
               Text(
-                'Año - 2023',
+                context.tr('year_2023'),
                 style: GoogleFonts.manrope(
                   fontSize: AppDimensions.fontNormal,
                   fontWeight: FontWeight.w100,
@@ -143,7 +145,7 @@ class StudiesScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'Fundamentos de Ingeniería de Software',
+                context.tr('software_eng_fundamentals'),
                 style: GoogleFonts.manrope(
                   fontWeight: FontWeight.bold,
                   fontSize: AppDimensions.fontNormal,
@@ -154,7 +156,7 @@ class StudiesScreen extends StatelessWidget {
                 style: GoogleFonts.manrope(fontSize: AppDimensions.fontNormal),
               ),
               Text(
-                'Año - 2023',
+                context.tr('year_2023'),
                 style: GoogleFonts.manrope(
                   fontSize: AppDimensions.fontNormal,
                   fontWeight: FontWeight.w100,
@@ -162,7 +164,7 @@ class StudiesScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'Git y Github',
+                context.tr('git_github'),
                 style: GoogleFonts.manrope(
                   fontWeight: FontWeight.bold,
                   fontSize: AppDimensions.fontNormal,
@@ -173,7 +175,7 @@ class StudiesScreen extends StatelessWidget {
                 style: GoogleFonts.manrope(fontSize: AppDimensions.fontNormal),
               ),
               Text(
-                'Año - 2023',
+                context.tr('year_2023'),
                 style: GoogleFonts.manrope(
                   fontSize: AppDimensions.fontNormal,
                   fontWeight: FontWeight.w100,
@@ -181,7 +183,7 @@ class StudiesScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'Desarrollo de Apps Móviles',
+                context.tr('mobile_dev'),
                 style: GoogleFonts.manrope(
                   fontWeight: FontWeight.bold,
                   fontSize: AppDimensions.fontNormal,
@@ -192,7 +194,7 @@ class StudiesScreen extends StatelessWidget {
                 style: GoogleFonts.manrope(fontSize: AppDimensions.fontNormal),
               ),
               Text(
-                'Año - 2023',
+                context.tr('year_2023'),
                 style: GoogleFonts.manrope(
                   fontSize: AppDimensions.fontNormal,
                   fontWeight: FontWeight.w100,
@@ -200,7 +202,7 @@ class StudiesScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'Introducción al desarrollo de apps móviles para Android',
+                context.tr('intro_android_dev'),
                 style: GoogleFonts.manrope(
                   fontWeight: FontWeight.bold,
                   fontSize: AppDimensions.fontNormal,
@@ -211,7 +213,7 @@ class StudiesScreen extends StatelessWidget {
                 style: GoogleFonts.manrope(fontSize: AppDimensions.fontNormal),
               ),
               Text(
-                'Año - 2024',
+                context.tr('year_2024'),
                 style: GoogleFonts.manrope(
                   fontSize: AppDimensions.fontNormal,
                   fontWeight: FontWeight.w100,
@@ -219,7 +221,7 @@ class StudiesScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'Introducción al desarrollo de apps móviles para Android',
+                context.tr('decision_skills_title'),
                 style: GoogleFonts.manrope(
                   fontWeight: FontWeight.bold,
                   fontSize: AppDimensions.fontNormal,
@@ -230,7 +232,7 @@ class StudiesScreen extends StatelessWidget {
                 style: GoogleFonts.manrope(fontSize: AppDimensions.fontNormal),
               ),
               Text(
-                'Año - 2024',
+                context.tr('year_2024'),
                 style: GoogleFonts.manrope(
                   fontSize: AppDimensions.fontNormal,
                   fontWeight: FontWeight.w100,
@@ -259,7 +261,7 @@ class StudiesScreen extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                      'Ver certificados',
+                      context.tr('view_certificates'),
                       style: GoogleFonts.manrope(
                         fontWeight: FontWeight.bold,
                         decoration: TextDecoration.underline,

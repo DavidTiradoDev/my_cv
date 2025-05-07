@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:easy_url_launcher/easy_url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,7 +17,7 @@ class ContactsScreen extends StatelessWidget {
         backgroundColor: AppColors.orange,
         foregroundColor: AppColors.white,
         title: Text(
-          'Contactos',
+          context.tr('contacts'),
           style: GoogleFonts.manrope(
             color: AppColors.white,
             fontWeight: FontWeight.bold,
@@ -29,7 +30,7 @@ class ContactsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'Mis datos de contacto',
+              context.tr('my_contacts'),
               style: GoogleFonts.manrope(
                 color: AppColors.black,
                 fontSize: AppDimensions.fontLarge,
@@ -64,7 +65,7 @@ class ContactsScreen extends StatelessWidget {
                     Icon(LucideIcons.smartphone),
                     SizedBox(width: 10),
                     Text(
-                      'Número: +57 305 2004610',
+                      context.tr('phone'),
                       style: GoogleFonts.manrope(
                         fontWeight: FontWeight.bold,
                         fontSize: AppDimensions.fontNormal,
@@ -102,7 +103,7 @@ class ContactsScreen extends StatelessWidget {
                     Icon(LucideIcons.mail),
                     SizedBox(width: 10),
                     Text(
-                      'Correo',
+                      context.tr('email'),
                       style: GoogleFonts.manrope(
                         fontWeight: FontWeight.bold,
                         fontSize: AppDimensions.fontNormal,

@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_url_launcher/easy_url_launcher.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import 'package:my_cv/utils/dimensions.dart';
 import 'package:my_cv/utils/colors.dart';
@@ -19,8 +21,43 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
+        leading: Container(
+          margin: EdgeInsets.all(10),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(30),
+            child: Icon(LucideIcons.languages, color: AppColors.white),
+            onTap: () {
+              showDialog(
+                context: context,
+                builder:
+                    (_) => AlertDialog(
+                      title: Text('Selecciona un idioma'),
+                      content: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          ListTile(
+                            title: const Text('Español'),
+                            onTap: () {
+                              context.setLocale(const Locale('es'));
+                              Navigator.pop(context);
+                            },
+                          ),
+                          ListTile(
+                            title: const Text('English'),
+                            onTap: () {
+                              context.setLocale(const Locale('en'));
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+              );
+            },
+          ),
+        ),
         title: Text(
-          'Bienvenidos a mi portafolio',
+          context.tr('welcome_portfolio'),
           style: GoogleFonts.manrope(
             fontWeight: FontWeight.bold,
             color: AppColors.white,
@@ -46,12 +83,33 @@ class HomeScreen extends StatelessWidget {
               children: [
                 RichText(
                   text: TextSpan(
-                    text: 'Bienvenidos, \nmi nombre es ',
+                    text: context.tr('welcome'),
                     style: GoogleFonts.manrope(
                       color: AppColors.black,
                       fontSize: AppDimensions.fontLarge,
                     ),
                     children: [
+                      TextSpan(
+                        text: '\n',
+                        style: GoogleFonts.manrope(
+                          color: AppColors.black,
+                          fontSize: AppDimensions.fontLarge,
+                        ),
+                      ),
+                      TextSpan(
+                        text: context.tr('my_name_is'),
+                        style: GoogleFonts.manrope(
+                          color: AppColors.black,
+                          fontSize: AppDimensions.fontLarge,
+                        ),
+                      ),
+                      TextSpan(
+                        text: ' ',
+                        style: GoogleFonts.manrope(
+                          color: AppColors.black,
+                          fontSize: AppDimensions.fontLarge,
+                        ),
+                      ),
                       TextSpan(
                         text: 'David Tirado',
                         style: GoogleFonts.manrope(
@@ -65,7 +123,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Divider(),
                 Text(
-                  'Acá podrán ver toda mi información profesional',
+                  context.tr('view_info'),
                   style: GoogleFonts.manrope(
                     fontSize: AppDimensions.fontNormal,
                     color: AppColors.black,
@@ -89,7 +147,7 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     MainButton(
-                      title: 'Proyectos',
+                      title: context.tr('projects'),
                       backgroundColor: AppColors.white,
                       textColor: AppColors.black,
                       onTap: () async {
@@ -101,7 +159,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     SizedBox(width: 10),
                     MainButton(
-                      title: 'Sobre mí',
+                      title: context.tr('about_me'),
                       onTap: () {
                         Navigations.navigationToScreen(
                           screen: AboutMeInjection.injection(),
@@ -118,7 +176,7 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     MainButton(
-                      title: 'Contactos',
+                      title: context.tr('contacts'),
                       backgroundColor: AppColors.black,
                       textColor: AppColors.white,
                       onTap: () {
@@ -130,7 +188,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     SizedBox(width: 10),
                     MainButton(
-                      title: 'Estudios',
+                      title: context.tr('studies'),
                       onTap: () {
                         Navigations.navigationToScreen(
                           screen: StudiesInjection.injection(),
